@@ -5,13 +5,11 @@
  */
 package com.sire.librarymanagement.settings;
 
-import com.gluonhq.charm.glisten.control.TextField;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 
 /**
@@ -22,11 +20,11 @@ import javafx.scene.control.PasswordField;
 public class SettingsController implements Initializable {
 
     @FXML
-    private TextField days;
+    private javafx.scene.control.TextField days;
     @FXML
-    private TextField fine;
+    private javafx.scene.control.TextField fine;
     @FXML
-    private TextField username;
+    private javafx.scene.control.TextField username;
     @FXML
     private PasswordField password;
 
