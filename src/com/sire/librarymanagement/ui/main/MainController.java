@@ -243,36 +243,45 @@ public class MainController implements Initializable {
 
     @FXML
     private void renew(ActionEvent event) {
-        int bookId = Integer.valueOf(bookID.getText());
-        library.updateIssue(bookId);
+        try {
+            int bookId = Integer.valueOf(bookID.getText());
+            library.updateIssue(bookId);
+        } catch (Exception e) {
+            bookID.clear();
+            alert(Alert.AlertType.ERROR, "A könyv nem létezik, vagy még nincs kölcsönözve!");
+        }
     }
 
     @FXML
     private void loadSubmission(ActionEvent event) {
-        int bookId = Integer.valueOf(bookID.getText());
-        Book selectedBook = library.findBook(bookId);
-        if (selectedBook.isStatus()) {
-            alert(Alert.AlertType.ERROR, "A könyv még nincs kivéve!");
-            bookID.clear();
-        } else {
-            String message = "Biztos visszaadod " + selectedBook.getAuthor() + "-nak\n" + selectedBook.getTitle() + " című könyvét?";
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-            alert.setTitle("Visszavétel megerősítése");
-            alert.setHeaderText(null);
-            alert.setContentText(message);
-
-            Optional<ButtonType> response = alert.showAndWait();
-            if (response.get() == ButtonType.OK) {
-                library.deleteIssue(bookId);
-                library.updateStatus(true, bookId);
-                alert(Alert.AlertType.INFORMATION, "A könyv sikeresen leadva!");
+        try {
+            int bookId = Integer.valueOf(bookID.getText());
+            Book selectedBook = library.findBook(bookId);
+            if (selectedBook.isStatus()) {
+                alert(Alert.AlertType.ERROR, "A könyv még nincs kivéve!");
+                bookID.clear();
             } else {
-                alert(Alert.AlertType.ERROR, "A visszaadás sikertelen!");
-            }
+                String message = "Biztos visszaadod " + selectedBook.getAuthor() + "-nak\n" + selectedBook.getTitle() + " című könyvét?";
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setTitle("Visszavétel megerősítése");
+                alert.setHeaderText(null);
+                alert.setContentText(message);
 
-            issueData.clear();
-            issueDataList.getItems().clear();
+                Optional<ButtonType> response = alert.showAndWait();
+                if (response.get() == ButtonType.OK) {
+                    library.deleteIssue(bookId);
+                    library.updateStatus(true, bookId);
+                    alert(Alert.AlertType.INFORMATION, "A könyv sikeresen leadva!");
+                } else {
+                    alert(Alert.AlertType.ERROR, "A visszaadás sikertelen!");
+                }
+            }
+        } catch (Exception e) {
             bookID.clear();
+            alert(Alert.AlertType.ERROR, "A könyv nem létezik, vagy még nincs kölcsönözve!");
         }
+        issueData.clear();
+        issueDataList.getItems().clear();
+        bookID.clear();
     }
 }
