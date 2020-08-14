@@ -49,7 +49,6 @@ public class MemberListController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         initCol();
         loadData();
-
     }
 
     private void initCol() {
@@ -57,14 +56,11 @@ public class MemberListController implements Initializable {
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         phonenumberColumn.setCellValueFactory(new PropertyValueFactory<>("phonenumber"));
         emailColumn.setCellValueFactory(new PropertyValueFactory<>("email"));
-
     }
 
     private void loadData() {
         LibraryManagementModel library = LibraryManagementModel.getInstance();
         memberList = FXCollections.observableArrayList(library.selectAllMember());
         bookTable.getItems().setAll(memberList);
-
     }
-
 }
