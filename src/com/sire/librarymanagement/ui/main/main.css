@@ -7,9 +7,17 @@
 }
 .setup-button{
     -fx-background-color:#424242;
-    -fx-text-fill: white;
+    -fx-text-fill: yellow;
 }
 .setup-button:hover{
     -fx-background-color:#0288D1;
-    -fx-text-fill: black;  
+    -fx-text-fill: green;  
+}
+.button{
+    -fx-background-color: #1976D2;
+    -fx-text-fill: white;
+}
+.button:hover {
+    -fx-background-color: #388E3C;
+    -fx-text-fill: black;
 }

@@ -11,9 +11,9 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane id="mainPane" fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="320.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sire.librarymanagement.ui.addbook.AddBookController">
+<AnchorPane id="mainPane" fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="314.0" prefWidth="500.0" stylesheets="@../main/main.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sire.librarymanagement.ui.addbook.AddBookController">
    <children>
-      <VBox layoutX="117.0" layoutY="23.0" prefHeight="493.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <VBox layoutX="117.0" layoutY="23.0" prefHeight="320.0" prefWidth="500.0" AnchorPane.bottomAnchor="-6.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <GridPane prefHeight="236.0" prefWidth="485.0">
               <columnConstraints>
@@ -75,10 +75,16 @@
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>
             </GridPane>
-            <HBox prefHeight="66.0" prefWidth="600.0">
+            <HBox prefHeight="56.0" prefWidth="500.0">
                <children>
-                  <Button id="saveButton" fx:id="saveButton" mnemonicParsing="false" onAction="#addBookAction" prefHeight="69.0" prefWidth="300.0" stylesheets="@AddBook.css" text="Mentés" />
-                  <Button id="cancelButton" fx:id="cancelButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#cancel" prefHeight="69.0" prefWidth="300.0" stylesheets="@AddBook.css" text="Mégse" />
+                  <Button id="saveButton" fx:id="saveButton" mnemonicParsing="false" onAction="#addBookAction" prefHeight="69.0" prefWidth="300.0" text="Mentés">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="5.0" top="10.0" />
+                     </HBox.margin></Button>
+                  <Button id="cancelButton" fx:id="cancelButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#cancel" prefHeight="69.0" prefWidth="300.0" text="Mégse">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="5.0" right="10.0" top="10.0" />
+                     </HBox.margin></Button>
                </children>
             </HBox>
          </children>

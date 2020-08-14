@@ -91,6 +91,11 @@ public class MainController implements Initializable {
         loadWindow("/com/sire/librarymanagement/ui/listbook/BookList.fxml", "Könyvek");
     }
 
+    @FXML
+    private void loadSettings(ActionEvent event) {
+        loadWindow("/com/sire/librarymanagement/settings/settings.fxml", "Beállítások");
+    }
+
     public void loadWindow(String location, String title) {
         try {
             Parent parent = FXMLLoader.load(getClass().getResource(location));

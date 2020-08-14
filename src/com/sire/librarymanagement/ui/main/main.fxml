@@ -26,17 +26,17 @@
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
-          <Menu mnemonicParsing="false" text="File">
+          <Menu mnemonicParsing="false" text="Fájl">
             <items>
               <MenuItem mnemonicParsing="false" text="Close" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
+          <Menu mnemonicParsing="false" text="Szerkesztés">
             <items>
               <MenuItem mnemonicParsing="false" text="Delete" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Help">
+          <Menu mnemonicParsing="false" text="Súgó">
             <items>
               <MenuItem mnemonicParsing="false" text="About" />
             </items>
@@ -47,16 +47,19 @@
    <left>
       <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="586.0" prefWidth="145.0" BorderPane.alignment="TOP_LEFT">
          <children>
-            <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#loadAddMember" prefHeight="150.0" prefWidth="145.0" text="Új felhasználó">
+            <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#loadAddMember" prefHeight="150.0" prefWidth="145.0" styleClass="setup-button" text="Új felhasználó">
                <graphic>
-                  <ImageView fitHeight="63.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="63.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true" styleClass="button">
                      <image>
                         <Image url="@../icons/add_mem.png" />
                      </image>
                   </ImageView>
                </graphic>
+               <VBox.margin>
+                  <Insets bottom="2.5" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
             </Button>
-            <Button contentDisplay="TOP" layoutX="10.0" layoutY="85.0" mnemonicParsing="false" onAction="#loadMember" prefHeight="150.0" prefWidth="145.0" text="Felhasználók">
+            <Button contentDisplay="TOP" layoutX="10.0" layoutY="85.0" mnemonicParsing="false" onAction="#loadMember" prefHeight="150.0" prefWidth="145.0" styleClass="setup-button" text="Felhasználók">
                <graphic>
                   <ImageView fitHeight="63.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -64,8 +67,11 @@
                      </image>
                   </ImageView>
                </graphic>
+               <VBox.margin>
+                  <Insets bottom="2.5" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
             </Button>
-            <Button contentDisplay="TOP" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#loadAddBook" prefHeight="150.0" prefWidth="145.0" text="Könyv hozzáadása">
+            <Button contentDisplay="TOP" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#loadAddBook" prefHeight="150.0" prefWidth="145.0" styleClass="setup-button" text="Könyv hozzáadása">
                <graphic>
                   <ImageView fitHeight="63.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -73,8 +79,11 @@
                      </image>
                   </ImageView>
                </graphic>
+               <VBox.margin>
+                  <Insets bottom="2.5" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
             </Button>
-            <Button contentDisplay="TOP" layoutX="10.0" layoutY="160.0" mnemonicParsing="false" onAction="#loadBooks" prefHeight="150.0" prefWidth="145.0" text="Könyvek">
+            <Button contentDisplay="TOP" layoutX="10.0" layoutY="160.0" mnemonicParsing="false" onAction="#loadBooks" prefHeight="150.0" prefWidth="145.0" styleClass="setup-button" text="Könyvek">
                <graphic>
                   <ImageView fitHeight="63.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -82,8 +91,11 @@
                      </image>
                   </ImageView>
                </graphic>
+               <VBox.margin>
+                  <Insets bottom="2.5" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
             </Button>
-            <Button contentDisplay="TOP" layoutX="10.0" layoutY="235.0" mnemonicParsing="false" prefHeight="150.0" prefWidth="145.0" text="Beállítások">
+            <Button contentDisplay="TOP" layoutX="10.0" layoutY="235.0" mnemonicParsing="false" onAction="#loadSettings" prefHeight="150.0" prefWidth="145.0" styleClass="setup-button" text="Beállítások">
                <graphic>
                   <ImageView fitHeight="63.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -91,8 +103,14 @@
                      </image>
                   </ImageView>
                </graphic>
+               <VBox.margin>
+                  <Insets bottom="2.5" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
             </Button>
          </children>
+         <effect>
+            <DropShadow />
+         </effect>
       </VBox>
    </left>
    <center>
@@ -177,7 +195,7 @@
                               </HBox>
                               <HBox alignment="CENTER" prefHeight="164.0" prefWidth="822.0">
                                  <children>
-                                    <Button mnemonicParsing="false" onAction="#loadIssueOperation" styleClass="setup-button" stylesheets="@main.css" text="Kölcsönöz">
+                                    <Button mnemonicParsing="false" onAction="#loadIssueOperation" stylesheets="@main.css" text="Kölcsönöz">
                                        <graphic>
                                           <ImageView fitHeight="29.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
@@ -192,7 +210,7 @@
                      </children></AnchorPane>
             </content>
           </Tab>
-          <Tab text="Renew / Submission">
+          <Tab text="Megújít / Visszaad">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
@@ -217,7 +235,7 @@
                            <bottom>
                               <HBox alignment="CENTER" prefHeight="82.0" prefWidth="822.0" BorderPane.alignment="CENTER">
                                  <children>
-                                    <Button mnemonicParsing="false" onAction="#renew" styleClass="setup-button" stylesheets="@main.css" text="Renew">
+                                    <Button mnemonicParsing="false" onAction="#renew" text="Megújít">
                                        <HBox.margin>
                                           <Insets right="20.0" />
                                        </HBox.margin>
@@ -229,7 +247,7 @@
                                           </ImageView>
                                        </graphic>
                                     </Button>
-                                    <Button layoutX="391.0" layoutY="37.0" mnemonicParsing="false" onAction="#loadSubmission" styleClass="setup-button" stylesheets="@main.css" text="Submission">
+                                    <Button layoutX="391.0" layoutY="37.0" mnemonicParsing="false" onAction="#loadSubmission" text="Visszaad">
                                        <HBox.margin>
                                           <Insets right="20.0" />
                                        </HBox.margin>

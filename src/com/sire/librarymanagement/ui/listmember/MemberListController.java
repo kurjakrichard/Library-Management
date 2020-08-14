@@ -5,7 +5,6 @@
  */
 package com.sire.librarymanagement.ui.listmember;
 
-import com.sire.librarymanagement.domain.Book;
 import com.sire.librarymanagement.domain.Member;
 import com.sire.librarymanagement.model.LibraryManagementModel;
 import java.net.URL;

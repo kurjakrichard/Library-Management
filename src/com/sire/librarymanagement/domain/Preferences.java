@@ -7,44 +7,36 @@ package com.sire.librarymanagement.domain;
 
 /**
  *
- * @author sire
+ * @author balza
  */
 public class Preferences {
 
-    private int days;
-    private int fine;
-    private String username;
-    private String password;
+    int nDaysWithoutFine;
+    float finePerDay;
+    String username;
+    String password;
 
-    public Preferences(int days, int fine, String username, String password) {
-        this.days = days;
-        this.fine = fine;
-        this.username = username;
-        this.password = password;
+    public Preferences() {
+        this.nDaysWithoutFine = 14;
+        this.finePerDay = 2;
+        this.username = "admin";
+        this.password = "admin";
     }
 
-    public String getPassword() {
-        return password;
+    public int getnDaysWithoutFine() {
+        return nDaysWithoutFine;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setnDaysWithoutFine(int nDaysWithoutFine) {
+        this.nDaysWithoutFine = nDaysWithoutFine;
     }
 
-    public int getDays() {
-        return days;
+    public float getFinePerDay() {
+        return finePerDay;
     }
 
-    public void setDays(int days) {
-        this.days = days;
-    }
-
-    public int getFine() {
-        return fine;
-    }
-
-    public void setFine(int fine) {
-        this.fine = fine;
+    public void setFinePerDay(float finePerDay) {
+        this.finePerDay = finePerDay;
     }
 
     public String getUsername() {
@@ -54,6 +46,12 @@ public class Preferences {
     public void setUsername(String username) {
         this.username = username;
     }
-    
-    
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }    
 }
