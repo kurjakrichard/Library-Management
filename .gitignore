@@ -27,6 +27,9 @@ build/
 nbbuild/
 dist/
 nbdist/
+out/
+.idea/
+src/META-INF/
 nbactions.xml
 nb-configuration.xml
 
