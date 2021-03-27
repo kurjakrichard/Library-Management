@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="615.0" prefWidth="967.0" stylesheets="@main.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sire.librarymanagement.MainController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Fájl">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Szerkesztés">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Súgó">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <left>
+      <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="586.0" prefWidth="145.0" BorderPane.alignment="TOP_LEFT">
+         <children>
+            <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#loadAddMember" prefHeight="150.0" prefWidth="145.0" styleClass="setup-button" text="Új felhasználó">
+               <graphic>
+                  <ImageView fitHeight="63.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true" styleClass="button">
+                     <image>
+                        <Image url="@ui/icons/add_mem.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <VBox.margin>
+                  <Insets bottom="2.5" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </Button>
+            <Button contentDisplay="TOP" layoutX="10.0" layoutY="85.0" mnemonicParsing="false" onAction="#loadMember" prefHeight="150.0" prefWidth="145.0" styleClass="setup-button" text="Felhasználók">
+               <graphic>
+                  <ImageView fitHeight="63.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@ui/icons/list_mem.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <VBox.margin>
+                  <Insets bottom="2.5" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </Button>
+            <Button contentDisplay="TOP" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#loadAddBook" prefHeight="150.0" prefWidth="145.0" styleClass="setup-button" text="Könyv hozzáadása">
+               <graphic>
+                  <ImageView fitHeight="63.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@ui/icons/add_book.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <VBox.margin>
+                  <Insets bottom="2.5" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </Button>
+            <Button contentDisplay="TOP" layoutX="10.0" layoutY="160.0" mnemonicParsing="false" onAction="#loadBooks" prefHeight="150.0" prefWidth="145.0" styleClass="setup-button" text="Könyvek">
+               <graphic>
+                  <ImageView fitHeight="63.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@ui/icons/list_book.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <VBox.margin>
+                  <Insets bottom="2.5" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </Button>
+            <Button contentDisplay="TOP" layoutX="10.0" layoutY="235.0" mnemonicParsing="false" onAction="#loadSettings" prefHeight="150.0" prefWidth="145.0" styleClass="setup-button" text="Beállítások">
+               <graphic>
+                  <ImageView fitHeight="63.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@ui/icons/settings.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <VBox.margin>
+                  <Insets bottom="2.5" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </VBox>
+   </left>
+   <center>
+      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab onSelectionChanged="#clearAll" text="Kölcsönzés">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox layoutX="41.0" layoutY="36.0" prefHeight="553.0" prefWidth="822.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="195.0" prefWidth="822.0" style="-fx-background-color: #e7e7e7;">
+                                 <children>
+                                    <TextField fx:id="bookIDInput" onAction="#loadBookInfo" prefHeight="28.0" prefWidth="189.0" promptText="Könyv azonosító">
+                                       <HBox.margin>
+                                          <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                    <GridPane prefHeight="135.0" prefWidth="453.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="199.0" minWidth="10.0" prefWidth="106.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="354.0" minWidth="10.0" prefWidth="349.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Text fx:id="bookName" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="347.7249984741211" GridPane.columnIndex="1" />
+                                          <Text fx:id="bookAuthor" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="347.7249984741211" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <Text fx:id="bookStatus" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="348.7249984741211" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Cím:" wrappingWidth="90.7249984741211" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Szerző:" wrappingWidth="88.7249984741211" GridPane.rowIndex="1" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Státusz:" wrappingWidth="91.7249984741211" GridPane.rowIndex="2" />
+                                       </children>
+                                       <HBox.margin>
+                                          <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                       </HBox.margin>
+                                    </GridPane>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                 </VBox.margin>
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </HBox>
+                              <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="195.0" prefWidth="822.0" style="-fx-background-color: #E7E7E7;">
+                                 <children>
+                                    <TextField fx:id="memberIDInput" onAction="#loadMemberInfo" prefHeight="28.0" prefWidth="189.0" promptText="Felhasználó azonosító">
+                                       <HBox.margin>
+                                          <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                    <GridPane prefHeight="135.0" prefWidth="453.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="193.0" minWidth="10.0" prefWidth="106.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="337.0" minWidth="10.0" prefWidth="325.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Text fx:id="memberName" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="335.7249984741211" GridPane.columnIndex="1" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Felhasználó:" wrappingWidth="104.7249984741211" />
+                                          <Text fx:id="memberContact" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="335.7249984741211" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kapcsolat:" wrappingWidth="104.7249984741211" GridPane.rowIndex="1" />
+                                       </children>
+                                       <HBox.margin>
+                                          <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                       </HBox.margin>
+                                    </GridPane>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" left="20.0" right="20.0" />
+                                 </VBox.margin>
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="164.0" prefWidth="822.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#loadIssueOperation" stylesheets="@main.css" text="Kölcsönöz">
+                                       <graphic>
+                                          <ImageView fitHeight="29.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@ui/icons/issue.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic></Button>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Megújít / Visszaad">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <BorderPane layoutX="125.0" layoutY="66.0" prefHeight="553.0" prefWidth="822.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <top>
+                              <Pane BorderPane.alignment="CENTER">
+                                 <children>
+                                    <TextField fx:id="bookID" alignment="CENTER" layoutX="202.0" onAction="#loadBookInfo2" prefHeight="28.0" prefWidth="361.0" promptText="Add meg a könyv azonosítóját!" />
+                                 </children>
+                                 <BorderPane.margin>
+                                    <Insets top="10.0" />
+                                 </BorderPane.margin>
+                              </Pane>
+                           </top>
+                           <center>
+                              <ListView fx:id="issueDataList" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                 <padding>
+                                    <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                                 </padding>
+                              </ListView>
+                           </center>
+                           <bottom>
+                              <HBox alignment="CENTER" prefHeight="82.0" prefWidth="822.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#renew" text="Megújít">
+                                       <HBox.margin>
+                                          <Insets right="20.0" />
+                                       </HBox.margin>
+                                       <graphic>
+                                          <ImageView fitHeight="29.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@ui/icons/renew.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Button layoutX="391.0" layoutY="37.0" mnemonicParsing="false" onAction="#loadSubmission" text="Visszaad">
+                                       <HBox.margin>
+                                          <Insets right="20.0" />
+                                       </HBox.margin>
+                                       <graphic>
+                                          <ImageView fitHeight="29.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@ui/icons/return.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                           </bottom>
+                        </BorderPane>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+</BorderPane>

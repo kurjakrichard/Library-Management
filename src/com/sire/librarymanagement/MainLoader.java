@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.sire.librarymanagement.ui.main;
+package com.sire.librarymanagement;
 
 import com.sire.librarymanagement.model.LibraryManagementModel;
 import javafx.application.Application;

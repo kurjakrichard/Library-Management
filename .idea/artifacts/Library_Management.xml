@@ -1,0 +1,20 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="Library-Management">
+    <output-path>$PROJECT_DIR$/out/artifacts/Library_Management</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="com.sire.librarymanagement.MainLoader" />
+        <option name="description" value="" />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="title" value="" />
+        <option name="vendor" value="" />
+        <option name="version" value="" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="Library_Management.jar">
+        <element id="module-output" name="Library-Management" />
+      </element>
+    </root>
+  </artifact>
+</component>

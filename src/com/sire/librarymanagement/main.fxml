@@ -22,7 +22,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="615.0" prefWidth="967.0" stylesheets="@main.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sire.librarymanagement.ui.main.MainController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="615.0" prefWidth="967.0" stylesheets="@main.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sire.librarymanagement.MainController">
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
@@ -51,7 +51,7 @@
                <graphic>
                   <ImageView fitHeight="63.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true" styleClass="button">
                      <image>
-                        <Image url="@../icons/add_mem.png" />
+                        <Image url="@ui/icons/add_mem.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -63,7 +63,7 @@
                <graphic>
                   <ImageView fitHeight="63.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../icons/list_mem.png" />
+                        <Image url="@ui/icons/list_mem.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -75,7 +75,7 @@
                <graphic>
                   <ImageView fitHeight="63.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../icons/add_book.png" />
+                        <Image url="@ui/icons/add_book.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -87,7 +87,7 @@
                <graphic>
                   <ImageView fitHeight="63.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../icons/list_book.png" />
+                        <Image url="@ui/icons/list_book.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -99,7 +99,7 @@
                <graphic>
                   <ImageView fitHeight="63.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../icons/settings.png" />
+                        <Image url="@ui/icons/settings.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -199,7 +199,7 @@
                                        <graphic>
                                           <ImageView fitHeight="29.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
-                                                <Image url="@../icons/issue.png" />
+                                                <Image url="@ui/icons/issue.png" />
                                              </image>
                                           </ImageView>
                                        </graphic></Button>
@@ -242,7 +242,7 @@
                                        <graphic>
                                           <ImageView fitHeight="29.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
-                                                <Image url="@../icons/renew.png" />
+                                                <Image url="@ui/icons/renew.png" />
                                              </image>
                                           </ImageView>
                                        </graphic>
@@ -254,7 +254,7 @@
                                        <graphic>
                                           <ImageView fitHeight="29.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
-                                                <Image url="@../icons/return.png" />
+                                                <Image url="@ui/icons/return.png" />
                                              </image>
                                           </ImageView>
                                        </graphic>
